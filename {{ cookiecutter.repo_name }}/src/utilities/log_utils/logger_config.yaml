@@ -1,0 +1,44 @@
+version: 1
+
+objects:
+  queue:
+    class: queue.Queue
+    maxsize: 1000
+formatters:
+  simple:
+    format: '%(asctime)s - %(levelname)s - %(name)s - %(message)s'
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+  file:
+    class: logging.FileHandler
+    level: WARNING
+    filename: '{{cookiecutter.project_name}}.log'
+    formatter: simple
+  queue_listener:
+    class: utilities.log_utils.logger_util.QueueListenerHandler
+    handlers:
+      - cfg://handlers.console
+      - cfg://handlers.file
+    queue: cfg://objects.queue
+
+loggers:
+  __main__:
+    level: WARNING
+    handlers:
+      - queue_listener
+    propagate: false
+  data:
+    level: WARNING
+    handlers:
+      - queue_listener
+    propagate: false
+
+root:
+  level: WARNING
+  handlers:
+    - console
