@@ -5,9 +5,9 @@ LoggerUtil
 Helper class to pipe all log's into a queue on a separate thread for
 processing through respective handlers
 
-.. class:: LoggerUtil
+.. module:: LoggerUtil
    :synopsis: pipe all log's into a queue on a separate thread
-.. classauthor:: civics
+.. moduleauthor:: civics
 """
 from logging.config import ConvertingList, ConvertingDict, valid_ident
 from logging.handlers import QueueHandler, QueueListener

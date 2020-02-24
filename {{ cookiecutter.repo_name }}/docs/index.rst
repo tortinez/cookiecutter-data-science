@@ -14,6 +14,15 @@ Contents:
    getting-started
    commands
 
+Logging Configuration
+----------------------------------------------
+You can find a README.md file in the log_utils folder
+
+.. automodule:: utilities.log_utils.logger_init
+   :members:
+.. automodule:: utilities.log_utils.logger_util
+   :members:
+
 
 
 Indices and tables
