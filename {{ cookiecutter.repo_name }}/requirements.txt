@@ -14,3 +14,9 @@ PyYaml
 # backwards compatibility
 pathlib2
 {% endif %}
+{% if cookiecutter.jupyter_notebooks == 'no' %}
+
+# notebooks publishing
+jupyter_client==5.3.4 # pweave not compatible with v 6.0.0
+Pweave
+{% endif %}

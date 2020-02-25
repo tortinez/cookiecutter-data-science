@@ -22,3 +22,8 @@ load_dotenv(find_dotenv())
 
 # Configuration Variables
 DEBUG = (os.environ.get('DEBUG') or False)
+
+
+# Logging initialization
+import logging
+from utilities.log_utils import logger_init

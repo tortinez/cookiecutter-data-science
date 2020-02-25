@@ -5,7 +5,7 @@ from dotenv import find_dotenv, load_dotenv
 
 # # Logging initialization
 import logging
-import utilities.log_utils.logger_init
+
 logger = logging.getLogger('data')
 
 
